@@ -5,4 +5,12 @@
 //  Created by Can on 10.03.2021.
 //
 
-import Foundation
+import UIKit
+
+class RoundedView: UIView {
+    
+    override func awakeFromNib() {
+        layer.cornerRadius = 2
+    }
+    
+}

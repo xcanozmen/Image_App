@@ -1,24 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uk4-Sv-vzc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Images App-->
+        <scene sceneID="UJg-k0-sZD">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5yp-26-KV8" sceneMemberID="firstResponder"/>
+                <viewController id="EvV-Of-jbq" customClass="HomeVC" customModule="seeImages" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F0m-py-1Ej">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mt3-6n-wbi">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.92049362180000005" green="0.92049362180000005" blue="0.92049362180000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="6u1-eX-F7z">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="4" minY="4" maxX="4" maxY="4"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XOK-tb-N0x"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mt3-6n-wbi" firstAttribute="leading" secondItem="XOK-tb-N0x" secondAttribute="leading" id="NkB-mT-jXH"/>
+                            <constraint firstItem="XOK-tb-N0x" firstAttribute="trailing" secondItem="mt3-6n-wbi" secondAttribute="trailing" id="YeI-WC-6EW"/>
+                            <constraint firstItem="mt3-6n-wbi" firstAttribute="top" secondItem="XOK-tb-N0x" secondAttribute="top" id="lH0-yQ-RCs"/>
+                            <constraint firstAttribute="bottom" secondItem="mt3-6n-wbi" secondAttribute="bottom" id="x5o-HZ-LTR"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Images App" id="aMi-So-Ks1"/>
+                    <connections>
+                        <outlet property="collectionView" destination="mt3-6n-wbi" id="IeR-Q7-JNa"/>
+                        <segue destination="Qit-WB-J1v" kind="show" identifier="ToDetailImageVC" id="7AX-MS-4n6"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="992.79999999999995" y="26.53673163418291"/>
+        </scene>
+        <!--DetailVC-->
+        <scene sceneID="Cx6-ST-FIr">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qp9-dq-gIv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Qit-WB-J1v" customClass="DetailVC" customModule="seeImages" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LiO-MV-neV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFF-OM-eUr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="L0U-K3-MOU"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IFF-OM-eUr" firstAttribute="leading" secondItem="LiO-MV-neV" secondAttribute="leading" id="0zY-ED-0wv"/>
+                            <constraint firstAttribute="trailing" secondItem="IFF-OM-eUr" secondAttribute="trailing" id="2Oq-9X-0U8"/>
+                            <constraint firstAttribute="bottom" secondItem="IFF-OM-eUr" secondAttribute="bottom" id="Qxd-Y4-92p"/>
+                            <constraint firstItem="IFF-OM-eUr" firstAttribute="top" secondItem="LiO-MV-neV" secondAttribute="top" id="n8v-AX-Wdm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hI6-OA-2Am"/>
+                    <connections>
+                        <outlet property="scrollView" destination="IFF-OM-eUr" id="PEr-Pg-l44"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1760.8" y="26.53673163418291"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WX3-o9-WeA">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cAj-eg-8TE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uk4-Sv-vzc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zj5-pR-MWL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EvV-Of-jbq" kind="relationship" relationship="rootViewController" id="oK6-0L-1dx"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="246" y="27"/>
         </scene>
     </scenes>
 </document>
